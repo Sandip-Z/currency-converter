@@ -1,3 +1,3 @@
-export const parseDecimal = (number: number, decimalPlace: number) => {
-  return Number(number.toFixed(decimalPlace));
+export const showDecimal = (number: string) => {
+  return (Math.round(+number * 100) / 100).toFixed(2);
 };

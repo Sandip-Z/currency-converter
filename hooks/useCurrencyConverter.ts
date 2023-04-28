@@ -1,19 +1,12 @@
-import { parseDecimal } from "@/utility/numbers";
 import { useCallback } from "react";
 
 const useCurrencyConverter = () => {
-  const convertNEPToBUSD = useCallback((NEP: number) => {
-    return {
-      NEP: parseDecimal(NEP, 2),
-      BUSD: parseDecimal(NEP * 3, 2),
-    };
+  const convertNEPToBUSD = useCallback((NEP: string) => {
+    return (+NEP * 3).toString();
   }, []);
 
-  const convertBUSDToNEP = useCallback((BUSD: number) => {
-    return {
-      NEP: parseDecimal(BUSD / 3, 2),
-      BUSD: parseDecimal(BUSD, 2),
-    };
+  const convertBUSDToNEP = useCallback((BUSD: string) => {
+    return (+BUSD / 3).toString();
   }, []);
 
   return {
