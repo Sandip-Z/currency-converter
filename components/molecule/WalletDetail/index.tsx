@@ -8,11 +8,12 @@ interface IWalletDetailProps {
 interface DetailProps {
   label: string;
   value: string;
+  clip?: boolean;
 }
 
-const Detail: React.FC<DetailProps> = ({ label, value }) => {
+const Detail: React.FC<DetailProps> = ({ label, value, clip }) => {
   return (
-    <div className="flex place-content-around my-2">
+    <div className="flex place-content-between px-10 my-2">
       <p>{label}</p>
       <p>{value}</p>
     </div>
@@ -27,7 +28,7 @@ const WalletDetail: React.FC<IWalletDetailProps> = ({
 }) => {
   return (
     <div className=" text-white">
-      <Detail label="Account" value={account} />
+      <Detail label="Account" value={account} clip />
       <Detail label="Chain ID" value={chainId} />
       <Detail label="Balance" value={balance} />
       <p className="flex place-content-center mt-5">Wallet Details</p>

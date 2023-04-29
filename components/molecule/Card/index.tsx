@@ -5,8 +5,8 @@ interface ICardProps {
 
 const Card: React.FC<ICardProps> = ({ title, children }) => {
   return (
-    <div className="border-4 border-black p-2 w-1/3 rounded-xl">
-      <p className={"mb-3"}>{title}</p>
+    <div className="border-2 border-gray-100 px-7 py-10 w-1/5 rounded-xl shadow-md">
+      <p className={"mb-3 text-2xl text-center"}>{title}</p>
       {children}
     </div>
   );
