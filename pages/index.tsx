@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { useWeb3 } from "@3rdweb/hooks";
 
 import { clipLongString } from "@/utility/string";
+import Head from "next/head";
 
 export default function Home() {
   const { address, chainId, connectWallet, disconnectWallet, balance } =
@@ -36,6 +37,9 @@ export default function Home() {
 
   return (
     <main className="flex flex-col justify-center h-screen items-center">
+      <Head>
+        <title>Convert BUSD to Nepali currency</title>
+      </Head>
       <CurrencyConverter />
       <PopUp text={"Check Wallet Details"}>
         {isWalletConnected ? (
